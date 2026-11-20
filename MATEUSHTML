@@ -7,23 +7,26 @@
     <title>Blog</title>
     <style>
         header{
-            background-color: #9e4933;
+            background-color: #6e2b1a;
             color: #FFFFFF;
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
-            border: 5px solid #81231D
+            border: 0px solid #81231D
         }
         main {
             background-color: #FFFFFF;
             color: #07203b;
             max-width: 800px;
             margin: 0 auto;
-            padding: 16px;
+            padding: 5px;
             }
         img{
             width:180px;
             height: 180px;
+        }
+        .artigo-autor{
+            font-weight: bold;
         }
     </style>
  </head>
@@ -31,12 +34,36 @@
     <header>
         <h1>Meu blog tech:</h1>
         <p>Vou compartilhar conhecimentos sobre tecnologia e programação</p>
-    <header>
-    <main>
- <img src="image-blog.png" alt="Ilustração digital estilizada de um computador retrô exibindo o rosto de um personagem de cabelo castanho bagunçado e óculos na tela laranja, cercado por janelas pop-up, um cursor de mouse e um teclado escuro na base, sobre um fundo branco.">
- <h2>Meu primeiro post</h2>
- <p>Por: Mateus Correa</p>
- <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área</p>
+<header>
+<main>
+<div>
+     <img src="image-blog.png" alt="Ilustração digital estilizada de um computador retrô exibindo o rosto de um personagem de cabelo castanho bagunçado e óculos na tela laranja, cercado por janelas pop-up, um cursor de mouse e um teclado escuro na base, sobre um fundo branco.">
+      <h2>Meu primeiro post</h2>
+      <p class="artigo-autor">Por: Mateus Correa</p>
+     <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área</p>
+     <button>❤️ <span>0</span></button>
+     <!--O elemento HTML <button></button> junto do emoji serve para definir a variável usada para os emojis, e o HTML <span></span> junto de 0 serve para determinar a área que representará o número de vezes que o botão de emoji foi clicado, tendo o valor inicial posto entre ele (no caso é 0). -->
+          </div>
+    </main>
+</body>
+<script>
+    //A tag <script> ajuda a trazer comandos em JavaScript que serão usados no funcionamento do botão de emojis, combinando conceitos de HTML e Java que tornam seu uso mais eficaz e estruturado.
+    const botao = document.querySelector("button");
+    //Busca o primeiro elemento <button> no HTML e o guarda dentro de uma variável constante chamada botao para que o JavaScript possa manipulá-lo.
+    botao.addEventListener("click", botaoClicado);
+    // Adiciona um "ouvinte de eventos" ao botão. Ele fica esperando o usuário realizar um clique ("click") e, quando isso acontece, executa a função botaoClicado.
+    function botaoClicado(){
+        //Define o bloco de instruções que será executado toda vez que o botão for clicado.
+        console.log("fui clicado");
+        // Exibe a mensagem "fui clicado" no console do navegador (ferramenta usada para testar se o clique está funcionando).
+        let texto = botao.querySelector("span");
+        //Procura a tag <span> que está dentro do botão (onde fica o número 0) e a armazena na variável texto.
+        texto.textContent++;
+        //Acessa o conteúdo de texto dentro do <span> (textContent) e usa o operador ++ para somar +1 ao valor atual (mudando de 0 para 1, 2, 3, e assim por diante).
+
+    }
+</script>
+</html>
  
 
  
